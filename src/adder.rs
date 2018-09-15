@@ -1,4 +1,4 @@
-pub fn adder(numbers: &mut Vec<u64>) -> u128 {
+pub fn adder(numbers: &Vec<u64>) -> u128 {
     let mut number_holder: u128 = 0;
 
     for &item in numbers.iter() {
