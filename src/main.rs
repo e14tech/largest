@@ -1,14 +1,16 @@
 extern crate rand;
 
 mod input;
-mod largest;
+mod biggest;
 mod smallest;
 mod adder;
+mod mean;
 
 use input::*;
-use largest::*;
+use biggest::*;
 use smallest::*;
 use adder::*;
+use mean::*;
 use rand::Rng;
 
 fn main() {
@@ -21,7 +23,7 @@ fn main() {
     }
     println!("Finding largest number.");
 
-    let largest_number = largest(&numbers);
+    let biggest_number = biggest(&numbers);
 
     println!("Finding smallest number.");
 
@@ -29,9 +31,14 @@ fn main() {
 
     println!("Adding all the numbers up.");
 
-    let added_number = adder(&mut numbers);
+    let added_number = adder(&numbers);
 
-    println!("The largest number in the list: {}.", largest_number);
+    println!("Finding the mean.");
+
+    let mean_number = mean(&numbers, &user_input);
+
+    println!("The largest number in the list: {}.", biggest_number);
     println!("The smallest number in the list is: {}", smallest_number);
     println!("All the numbers added up is: {}", added_number);
+    println!("The mean of all the numbers is: {}", mean_number);
 }
